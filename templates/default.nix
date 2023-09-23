@@ -1,3 +1,6 @@
 {
-  cpp.path = ./cpp;
+  cpp = {
+    description = "C++ template";
+    path = ./cpp;
+  }
 }

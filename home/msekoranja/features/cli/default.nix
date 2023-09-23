@@ -6,7 +6,7 @@
     #./fish.nix
     #./gh.nix
     ./git.nix
-    #./nix-index.nix
+    ./nix-index.nix
     ./pfetch.nix
     ./screen.nix
     ./shellcolor.nix
@@ -23,7 +23,7 @@
     bc # Calculator
     bottom # System viewer
     ncdu # TUI disk usage
-    #eza # Better ls
+    eza # Better ls
     ripgrep # Better grep
     fd # Better find
     httpie # Better curl
