@@ -7,15 +7,9 @@
     ./hardware-configuration.nix
 
     ../common/global
-    ../common/users/misterio
+    ../common/users/msekoranja
 
-    ../common/optional/gamemode.nix
-    ../common/optional/ckb-next.nix
-    ../common/optional/greetd.nix
-    ../common/optional/pipewire.nix
     ../common/optional/quietboot.nix
-    ../common/optional/lol-acfix.nix
-    ../common/optional/starcitizen-fixes.nix
   ];
 
   networking = {
