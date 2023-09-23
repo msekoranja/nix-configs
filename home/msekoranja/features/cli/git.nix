@@ -14,6 +14,14 @@
       #user.signing.key = "";
       #commit.gpgSign = true;
       #gpg.program = "${config.programs.gpg.package}/bin/gpg2";
+
+      diff.tool = "difftastic";
+      pager.difftool = true;
+
+      difftool = {
+        prompt = false;
+        difftastic.cmd = ''${lib.getExe pkgs.difftastic} "$LOCAL" "$REMOTE"'';
+      };
     };
     lfs.enable = true;
     ignores = [ ".direnv" "result" ];

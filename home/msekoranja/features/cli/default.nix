@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   imports = [
-    ./zsh.nix
     ./bat.nix
     ./direnv.nix
+    ./eza.nix
     #./fish.nix
     #./gh.nix
     ./git.nix
@@ -11,7 +11,8 @@
     ./screen.nix
     ./shellcolor.nix
     ./ssh.nix
-    ./starship.nix
+    #./starship.nix
+    ./zsh.nix
   ];
   home.packages = with pkgs; [
     wget
@@ -27,7 +28,7 @@
     ripgrep # Better grep
     fd # Better find
     httpie # Better curl
-    diffsitter # Better diff
+    difftastic # Better diff
     jq # JSON pretty printer and manipulator
 
     nil # Nix LSP
