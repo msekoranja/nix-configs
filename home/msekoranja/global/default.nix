@@ -56,6 +56,6 @@ in
     #};
   };
 
-  colorscheme = lib.mkDefault colorSchemes.dracula;
+  colorscheme = lib.mkDefault colorSchemes.windows-10;
   home.file.".colorscheme".text = config.colorscheme.slug;
 }
