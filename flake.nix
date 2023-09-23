@@ -1,18 +1,17 @@
 {
   description = "My NixOS configuration";
 
-  nixConfig = {
-    extra-substituters = [ "https://cache.m7.rs" ];
-    extra-trusted-public-keys = [ "cache.m7.rs:kszZ/NSwE/TjhOcPPQ16IuUiuRSisdiIwhKZCxguaWg=" ];
-  };
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nh = {
+      url = "github:viperml/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     #hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
     nix-colors.url = "github:misterio77/nix-colors";

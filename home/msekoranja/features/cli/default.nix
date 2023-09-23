@@ -23,7 +23,7 @@
     bc # Calculator
     bottom # System viewer
     ncdu # TUI disk usage
-    eza # Better ls
+    #eza # Better ls
     ripgrep # Better grep
     fd # Better find
     httpie # Better curl
@@ -32,7 +32,6 @@
 
     nil # Nix LSP
     nixfmt # Nix formatter
-    nix-inspect # See which pkgs are in your PATH
 
     inputs.nh.default # nixos-rebuild and home-manager CLI wrapper
   ];
