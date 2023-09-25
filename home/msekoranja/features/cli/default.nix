@@ -7,7 +7,6 @@
     #./gh.nix
     ./git.nix
     ./nix-index.nix
-    ./pfetch.nix
     ./screen.nix
     ./ssh.nix
     ./zsh.nix
@@ -28,10 +27,11 @@
     httpie # Better curl
     difftastic # Better diff
     jq # JSON pretty printer and manipulator
-
-    nil # Nix LSP
+    fastfetch # Get OS info
+    
+    #nil # Nix LSP
     nixfmt # Nix formatter
 
-    inputs.nh.default # nixos-rebuild and home-manager CLI wrapper
+    #inputs.nh.default # nixos-rebuild and home-manager CLI wrapper
   ];
 }

@@ -19,4 +19,5 @@ in
         autocmd FileType json,html,nix setlocal tabstop=2
       augroup END
     '';
+  };
 }

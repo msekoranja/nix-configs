@@ -7,10 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nh = {
-      url = "github:viperml/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nh = {
+    #  url = "github:viperml/nh";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     
     #hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
