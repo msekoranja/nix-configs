@@ -35,7 +35,7 @@ in
   };
 
   home = {
-    username = lib.mkDefault "msekoranja"; # TODO
+    username = lib.mkDefault "msekoranja";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = lib.mkDefault "22.05"; # TODO
     sessionPath = [ "$HOME/.local/bin" ];

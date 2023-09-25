@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #nh = {
     #  url = "github:viperml/nh";
     #  inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +25,7 @@
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
-      systems = [ "x86_64-linux" "aarch64-linux" ];
+      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
       forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
       pkgsFor = nixpkgs.legacyPackages;
     in
@@ -47,6 +51,11 @@
       };
 
       homeConfigurations = {
+        "msekoranja@m1air" = lib.homeManagerConfiguration {
+          modules = [ ./home/msekoranja/m1air.nix ];
+          pkgs = pkgsFor.aarch64-darwin;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
         "msekoranja@cslwsl" = lib.homeManagerConfiguration {
           modules = [ ./home/msekoranja/cslwsl.nix ];
           pkgs = pkgsFor.x86_64-linux;

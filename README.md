@@ -60,3 +60,17 @@ On my desktop and laptop, I use `pass` for managing passwords, which are
 encrypted using (you bet) my PGP key. This same key is also used for mail
 signing, as well as for SSH'ing around.
 
+## home-
+
+If you get
+
+```bash
+error: file 'home-manager/home-manager/build-news.nix' was not found in the Nix search path (add it using $NIX_PATH or -I)
+```
+error, do:
+
+```bash
+home-manager news --flake .
+```
+
+to resolve it.
