@@ -4,6 +4,7 @@
     ./direnv.nix
     ./eza.nix
     #./fish.nix
+    ./fzf.nix
     #./gh.nix
     ./git.nix
     ./nix-index.nix
