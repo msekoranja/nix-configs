@@ -9,9 +9,7 @@
     ./nix-index.nix
     ./pfetch.nix
     ./screen.nix
-    ./shellcolor.nix
     ./ssh.nix
-    #./starship.nix
     ./zsh.nix
   ];
   home.packages = with pkgs; [
