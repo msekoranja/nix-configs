@@ -29,6 +29,7 @@
     difftastic # Better diff
     jq # JSON pretty printer and manipulator
     fastfetch # Get OS info
+    magic-wormhole # File transfer
     
     #nil # Nix LSP
     nixfmt # Nix formatter
