@@ -2,6 +2,8 @@
 let
   inherit (inputs.nix-colors) colorSchemes;
   inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) colorschemeFromPicture nixWallpaperFromScheme;
+  
+  homeDirPrefix = if pkgs.stdenv.hostPlatform.isDarwin then "/Users" else "/home";
 in
 {
   imports = [
@@ -36,7 +38,7 @@ in
 
   home = {
     username = lib.mkDefault "msekoranja";
-    homeDirectory = lib.mkDefault "/home/${config.home.username}";
+    homeDirectory = lib.mkDefault "/${homeDirPrefix}/${config.home.username}";
     stateVersion = lib.mkDefault "22.05"; # TODO
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
