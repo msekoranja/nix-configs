@@ -39,7 +39,7 @@ in
   home = {
     username = lib.mkDefault "msekoranja";
     homeDirectory = lib.mkDefault "/${homeDirPrefix}/${config.home.username}";
-    stateVersion = lib.mkDefault "22.05"; # TODO
+    stateVersion = lib.mkDefault "23.05";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
     };

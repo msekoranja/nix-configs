@@ -10,17 +10,17 @@
   import nixpkgs { overlays = [ ]; }
 , ...
 }: {
-  default = pkgs.mkShell {
+  default = pkgs.mkShellNoCC {
     NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
     nativeBuildInputs = with pkgs; [
       nix
       home-manager
       git
 
-      sops
-      ssh-to-age
-      gnupg
-      age
+      #sops
+      #ssh-to-age
+      #gnupg
+      #age
     ];
   };
 }
