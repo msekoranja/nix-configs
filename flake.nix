@@ -48,6 +48,11 @@
       #    modules = [ ./hosts/atlas ];
       #    specialArgs = { inherit inputs outputs; };
       #  };
+        # Raspberry PI 4
+        rpi4 = lib.nixosSystem {
+          modules = [ ./hosts/rpi4 ];
+          specialArgs = { inherit inputs outputs; };
+        };
       };
 
       homeConfigurations = {
@@ -59,6 +64,11 @@
         "msekoranja@cslwsl" = lib.homeManagerConfiguration {
           modules = [ ./home/msekoranja/cslwsl.nix ];
           pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "msekoranja@rpi4" = lib.homeManagerConfiguration {
+          modules = [ ./home/msekoranja/rpi4.nix ];
+          pkgs = pkgsFor.aarch64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
       };

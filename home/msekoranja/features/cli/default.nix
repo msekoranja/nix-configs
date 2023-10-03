@@ -30,9 +30,14 @@
     jq # JSON pretty printer and manipulator
     fastfetch # Get OS info
     magic-wormhole # File transfer
-    
+
+    nvd # Nix profile diff tool
     #nil # Nix LSP
     nixfmt # Nix formatter
+    
+    # zip tools for Windows env. compatibility
+    zip
+    unzip 
 
     #inputs.nh.default # nixos-rebuild and home-manager CLI wrapper
   ];

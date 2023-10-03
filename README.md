@@ -19,7 +19,7 @@ Looking for something simpler to start out with flakes? Try [this starter config
     - Each directory here is a "feature" each hm configuration can toggle, thus
       customizing my setup for each machine (be it a server, desktop, laptop,
       anything really).
-- `modules`: A few actual modules (with options) I haven't upstreamed yet.
+- `modules`: A few actual modules (with options).
 - `overlay`: Patches and version overrides for some packages. Accessible via
   `nix build`.
 - `pkgs`: My custom packages. Also accessible via `nix build`. You can compose
@@ -29,45 +29,67 @@ Looking for something simpler to start out with flakes? Try [this starter config
 
 ## How to bootstrap
 
-All you need is nix (any version). Run:
-```
-nix-shell
-```
-
-If you already have nix 2.4+, git, and have already enabled `flakes` and
-`nix-command`, you can also use the non-legacy command:
+All you need is nix. Run:
 ```
 nix develop
 ```
 
-`nixos-rebuild --flake .` To build system configurations
+If you already use older nix version without `flakes` and
+`nix-command` enabled, you can also use a legacy command:
+```
+nix-shell
+```
 
-`home-manager --flake .` To build user configurations
+Then:
+```bash
+# build system configurations
+nixos-rebuild --flake .
 
-`nix build` (or shell or run) To build and use packages
+# build and activate specific user configuration
+home-manager --flake .#msekoranja@cslwsl switch
 
-`sops` To manage secrets
+# build and use packages
+nix build (or shell or run)
+```
 
+## Secrets
 
-## Secrets (TODO)
+Currently secrets are not managed, intentionally. Passwords should not be used,
+and public/private keys are easy to generate. Sharing the keys is better avoided,
+since if shared key is compromised all the private keys (on all the hosts) needs
+to be regenerated. If you use pair per host, then only the compromized key must be
+regenerated.
 
-For deployment secrets (such as user passwords and server service secrets), I'm
-using the awesome [`sops-nix`](https://github.com/Mic92/sops-nix). All secrets
-are encrypted with my personal PGP key (stored on a YubiKey), as well as the
-relevant systems's SSH host keys.
+To generate key pair use, e.g.
+```bash
+# for local machine
+sh-keygen -t ed25519 -C $HOST
 
-On my desktop and laptop, I use `pass` for managing passwords, which are
-encrypted using (you bet) my PGP key. This same key is also used for mail
-signing, as well as for SSH'ing around.
+# for GitHub
+sh-keygen -t ed25519 -C "GitHub" -f id_gh
 
-## home-
+```
+
+To distribute machine keys easily use:
+```bash
+# to accept public SSH key
+wormhole ssh invite
+
+# to send public SSH key
+wormhole ssh accept <code>
+```
+
+For future deployment secrets (e.g. API kets), the awesome [`sops-nix`](https://github.com/Mic92/sops-nix)
+can be used.
+
+## home-manager news issue
 
 If you get
 
 ```bash
 error: file 'home-manager/home-manager/build-news.nix' was not found in the Nix search path (add it using $NIX_PATH or -I)
 ```
-error, do:
+error, rebuild again and if this does not help do:
 
 ```bash
 home-manager news --flake .
