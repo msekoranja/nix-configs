@@ -36,7 +36,7 @@
       templates = import ./templates;
 
       overlays = import ./overlays { inherit inputs outputs; };
-      #hydraJobs = import ./hydra.nix { inherit inputs outputs; };
+      hydraJobs = import ./hydra.nix { inherit inputs outputs; };
 
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
