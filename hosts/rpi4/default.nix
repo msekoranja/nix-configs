@@ -28,5 +28,6 @@
     makeModulesClosure = x: prev.makeModulesClosure (x // { allowMissing = true; });
   })];
 
+  nixpkgs.hostPlatform.system = "aarch64-linux";
   system.stateVersion = "23.11";
 }
