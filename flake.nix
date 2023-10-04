@@ -50,7 +50,10 @@
       #  };
         # Raspberry PI 4
         rpi4 = lib.nixosSystem {
-          modules = [ ./hosts/rpi4 ];
+          modules = [ 
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+            ./hosts/rpi4
+          ];
           specialArgs = { inherit inputs outputs; };
         };
       };
@@ -67,10 +70,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
         };
         "msekoranja@rpi4" = lib.homeManagerConfiguration {
-          modules = [ 
-            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
-            ./home/msekoranja/rpi4.nix
-            ];
+          modules = [ ./home/msekoranja/rpi4.nix ];
           pkgs = pkgsFor.aarch64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
