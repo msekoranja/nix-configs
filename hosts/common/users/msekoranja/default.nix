@@ -26,5 +26,5 @@ in
     packages = [ pkgs.home-manager ];
   };
 
-  home-manager.users.misterio = import ../../../../home/msekoranja/${config.networking.hostName}.nix;
+  home-manager.users.msekoranja = import ../../../../home/msekoranja/${config.networking.hostName}.nix;
 }

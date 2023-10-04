@@ -44,7 +44,8 @@ Then:
 ```bash
 # build system configurations
 nixos-rebuild --flake .
-nix build --show-trace .#nixosConfigurations.rpi4.config.system.build.toplevel
+nix build .#nixosConfigurations.rpi4.config.system.build.toplevel
+nix build .#nixosConfigurations.rpi4.config.system.build.sdImage
 
 # build and activate specific user configuration
 home-manager --flake .#msekoranja@cslwsl switch

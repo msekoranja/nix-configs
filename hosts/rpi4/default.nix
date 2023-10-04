@@ -4,8 +4,8 @@
 
     ./hardware-configuration.nix
 
-    #../common/global
-    #../common/users/msekoranja
+    ../common/global
+    ../common/users/msekoranja
   ];
 
   networking = {

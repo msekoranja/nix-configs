@@ -34,5 +34,6 @@ in
   };
 
   # Passwordless sudo when SSH'ing with keys
-  security.pam.enableSSHAgentAuth = true;
+  #https://github.com/NixOS/nixpkgs/issues/256713
+  #security.pam.enableSSHAgentAuth = true;
 }
