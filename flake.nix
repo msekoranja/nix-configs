@@ -16,7 +16,7 @@
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
     
-    #hardware.url = "github:nixos/nixos-hardware";
+    hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
     nix-colors.url = "github:misterio77/nix-colors";
   };
