@@ -67,7 +67,10 @@
           extraSpecialArgs = { inherit inputs outputs; };
         };
         "msekoranja@rpi4" = lib.homeManagerConfiguration {
-          modules = [ ./home/msekoranja/rpi4.nix ];
+          modules = [ 
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+            ./home/msekoranja/rpi4.nix
+            ];
           pkgs = pkgsFor.aarch64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
