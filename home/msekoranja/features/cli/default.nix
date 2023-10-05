@@ -28,7 +28,7 @@
     httpie # Better curl
     difftastic # Better diff
     jq # JSON pretty printer and manipulator
-    fastfetch # Get OS info
+    neofetch # Get OS info (fastfech is not lightweight)
     magic-wormhole # File transfer
 
     nvd # Nix profile diff tool
