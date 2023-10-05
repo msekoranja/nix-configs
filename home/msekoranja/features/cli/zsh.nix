@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -9,6 +9,8 @@
       enable = true;
       theme = "agnoster"; # make sure you have powerline fonts installed
     };
+
+    plugins = [ { name = "fzf-tab"; src = "${pkgs.zsh-fzf-tab}/share/fzf-tab"; } ];
 
     shellAliases = {
       extract = ''
@@ -48,6 +50,10 @@
       zstyle :bracketed-paste-magic paste-init pasteinit
       zstyle :bracketed-paste-magic paste-finish pastefinish
       ### Fix slowness of pastes
+    '';
+
+    initExtra = ''
+      zstyle ':completion:*:descriptions' format '[%d]' 
     '';
 
   };
