@@ -6,7 +6,7 @@ in
   users.users.msekoranja = {
     isNormalUser = true;
     initialPassword = "changeme!";  # TODO
-    #shell = pkgs.zsh;
+    shell = pkgs.zsh;
     extraGroups = [
       "wheel"
     ] ++ ifTheyExist [
@@ -25,6 +25,8 @@ in
     #openssh.authorizedKeys.keys = [ (builtins.readFile ../../../../home/msekoranja/ssh.pub) ];
     packages = [ pkgs.home-manager ];
   };
+  
+  programs.zsh.enable = true;
 
   home-manager.users.msekoranja = import ../../../../home/msekoranja/${config.networking.hostName}.nix;
 }
