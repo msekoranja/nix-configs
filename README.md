@@ -46,6 +46,10 @@ Then:
 nixos-rebuild --flake .
 nix build .#nixosConfigurations.rpi4.config.system.build.toplevel
 nix build .#nixosConfigurations.rpi4.config.system.build.sdImage
+#https://nixos.wiki/wiki/NixOS_on_ARM#Getting_the_installer
+#https://nix.dev/tutorials/nixos/installing-nixos-on-a-raspberry-pi
+#https://myme.no/posts/2022-12-01-nixos-on-raspberrypi.html
+# do not forget to set crosscompile/qemu if building on other platform on host machine
 
 # build and activate specific user configuration
 home-manager --flake .#msekoranja@cslwsl switch

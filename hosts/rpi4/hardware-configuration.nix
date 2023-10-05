@@ -1,21 +1,6 @@
 { pkgs, ... }: {
 
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-    };
-
-    "/firmware" = {
-      device = "/dev/disk/by-label/FIRMWARE";
-      fsType = "vfat";
-    };
-  };
-
-  swapDevices = [{
-    device = "/swap/swapfile";
-    size = 8196;
-  }];
+  # use default fileSystem configuration from modules/installer/sd-card/sd-image.nix
 
   console.enable = false;
 
